@@ -105,5 +105,40 @@ class SistemaSoporte:
         print("\n=== SOLICITUDES REGISTRADAS ===")
         for solicitud in self.solicitudes:
             solicitud.mostrar()
+            #Menú
+def mostrar_menu():
+    print("\n===== SOPORTE TÉCNICO UNIVERSITARIO =====")
+    print("1. Ingresar datos de la solicitud")
+    print("2. Registrar solicitud (validar)")
+    print("3. Limpiar campos")
+    print("4. Consultar solicitudes")
+    print("5. Salir")
+
+
+def main():
+    sistema = SistemaSoporte()
+    opcion = ""
+
+    while opcion != "5":
+        mostrar_menu()
+        opcion = input("Seleccione una opción (1-5): ").strip()
+
+        if opcion == "1":
+            sistema.capturar_datos()
+        elif opcion == "2":
+            sistema.registrar()
+        elif opcion == "3":
+            sistema.limpiar()
+            print("-Campos limpiados.")
+        elif opcion == "4":
+            sistema.consultar()
+        elif opcion == "5":
+            print("Saliendo del programa. ¡Hasta pronto!")
+        else:
+            print("Opción no válida. Escriba un número del 1 al 5.")
+
+
+main()
+
 
 
